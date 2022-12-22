@@ -12,13 +12,13 @@ def something():
     return FileResponse("htmldirectory/index.html", my_list=database.result)
 '''
 @api_router.get("/", status_code=200)
-def change():
+def change(request: Request):
     """
     Root GET
     """
     return templates.TemplateResponse(
         "htmldirectory/index.html",
-        {"my_list": 12},
+        {"request":request, "my_list": 12}
     )
 
 @app.get("/")
