@@ -6,11 +6,11 @@ import database
 app = FastAPI()
 templates = Jinja2Templates(directory="htmldirectory")
 api_router = APIRouter()
-
+'''
 @app.route('/')
 def something():
     return FileResponse("htmldirectory/index.html", my_list=database.result)
-
+'''
 @api_router.get("/", status_code=200)
 def change():
     """
